@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # Добавляем токен для аутентификации
+          token: ${{ secrets.TOKEN_PARSER }}
 
       - name: Navigate to TokenParser directory
         working-directory: ./front-custom-packages-main
@@ -37,4 +37,4 @@ jobs:
         run: |
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN_PARSER }}
