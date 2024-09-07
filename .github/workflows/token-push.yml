@@ -30,7 +30,7 @@ jobs:
       - name: Add generated files to Git
         working-directory: ./front-custom-packages-main
         run: |
-          git add themes/*
+          git add themes/* figmaTokenParser/parsedVariables/
           git commit -m "Add generated CSS files from tokens"
           
       - name: Push changes
