@@ -5,6 +5,7 @@ const https = require('https');
 const fs = require('fs');
 
 const links = process.env['LINKS'].split(',');
+const outputDir = process.cwd() + '/themes/';
 
 registerTransforms(StyleDictionary, {
   expand: {
@@ -24,10 +25,10 @@ links.map((link) => {
     });
 
     res.on("end", () => {
-      if (!fs.existsSync(__dirname + '/themes/')) {
-        fs.mkdirSync(__dirname + '/themes/', { recursive: true});
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true});
       }
-      fs.writeFile(__dirname + '/themes/' + fileName, data,'utf-8', (err, ) => {
+      fs.writeFile(outputDir + fileName, data,'utf-8', (err, ) => {
         if(err) {
           console.log('Error write json file', err)
           return
