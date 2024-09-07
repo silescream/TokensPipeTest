@@ -19,3 +19,10 @@ jobs:
       - name: Run token parser
         working-directory: ./front-custom-packages-main
         run: npm run generate-token-test
+        
+      - name: Add generated files to Git
+        working-directory: ./front-custom-packages-main
+        run: |
+          git add themes/*
+          git commit -m "Add generated CSS files from tokens"
+          git push
