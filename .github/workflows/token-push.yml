@@ -12,8 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Navigate to TokenParser directory
+        working-directory: ./front-custom-packages-main
         run: npm install
 
       - name: Run token parser
-        run: npm run generate-token-cv
+        working-directory: ./front-custom-packages-main
+        run: npm run generate-token-test
