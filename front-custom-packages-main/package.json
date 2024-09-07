@@ -9,7 +9,7 @@
     "generate-token-vp": "better-npm-run generate-token-vp",
     "generate-token-vip": "better-npm-run generate-token-vip",
     "generate-token-cv": "better-npm-run generate-token-cv",
-    "generate-token-test": "better-npm-run generate-token-test",
+    "generate-token-test": "better-npm-run generate-token-test"
   },
   "betterScripts": {
     "generate-token-7slots": {
