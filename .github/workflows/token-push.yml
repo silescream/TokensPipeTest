@@ -5,7 +5,8 @@ on:
     branches:
       - main
     paths-ignore:
-      - '.github/workflows/**'
+      - 'front-custom-packages-main/themes/**'
+      - 'front-custom-packages-main/parsedVariables/**'
 
 jobs:
   token_push_job:
