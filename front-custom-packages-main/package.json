@@ -1,0 +1,62 @@
+{
+  "name": "front-custom-packages",
+  "version": "1.0.1",
+  "description": "Custom front packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-token-7slots": "better-npm-run generate-token-7slots",
+    "generate-token-vp": "better-npm-run generate-token-vp",
+    "generate-token-vip": "better-npm-run generate-token-vip",
+    "generate-token-cv": "better-npm-run generate-token-cv"
+  },
+  "betterScripts": {
+    "generate-token-7slots": {
+      "command": "node figmaTokenParser/tokenParser.js && node figmaTokenParser/cssToScssParser.js",
+      "env": {
+        "LINKS": [
+          "https://raw.githubusercontent.com/kpsolo/7s-design-tokens/main/themes/7slots.basari.json",
+          "https://raw.githubusercontent.com/kpsolo/7s-design-tokens/main/themes/7slots.default.json",
+          "https://raw.githubusercontent.com/kpsolo/7s-design-tokens/main/themes/7slots.winnita.json",
+          "https://raw.githubusercontent.com/kpsolo/7s-design-tokens/main/themes/7slots.masalbet.json",
+          "https://raw.githubusercontent.com/kpsolo/7s-design-tokens/main/themes/7slots.abebet.json"
+        ]
+      }
+    },
+    "generate-token-vp": {
+      "command": "node figmaTokenParser/tokenParser.js && node figmaTokenParser/cssToScssParser.js",
+      "env": {
+        "LINKS": [
+          "https://raw.githubusercontent.com/kpsolo/vp-design-tokens/main/themes/vp.default.json",
+          "https://raw.githubusercontent.com/kpsolo/vp-design-tokens/main/themes/vp.vr.json"
+        ]
+      }
+    },
+    "generate-token-vip": {
+      "command": "node figmaTokenParser/tokenParser.js && node figmaTokenParser/cssToScssParser.js",
+      "env": {
+        "LINKS": [
+          "https://raw.githubusercontent.com/kpsolo/design-tokens-ep/main/vip/VIP.json"
+        ]
+      }
+    },
+    "generate-token-cv": {
+      "command": "node figmaTokenParser/tokenParser.js && node figmaTokenParser/cssToScssParser.js",
+      "env": {
+        "LINKS": [
+          "https://raw.githubusercontent.com/kpsolo/cv-design-tokens/main/cv.default.json"
+        ]
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.slygods.com/wl/front/front-custom-packages.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tokens-studio/sd-transforms": "^0.12.1",
+    "better-npm-run": "^0.1.1"
+  }
+}
