@@ -19,6 +19,12 @@ jobs:
       - name: Run token parser
         working-directory: ./front-custom-packages-main
         run: npm run generate-token-test
+
+      - name: Set Git user info
+        run: |
+          git config --global user.email "kuznietsovalex@gmail.com"
+          git config --global user.name "Silescream"
+
         
       - name: Add generated files to Git
         working-directory: ./front-custom-packages-main
