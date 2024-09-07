@@ -31,4 +31,8 @@ jobs:
         run: |
           git add themes/*
           git commit -m "Add generated CSS files from tokens"
+      - name: Push changes
+        run: |
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
