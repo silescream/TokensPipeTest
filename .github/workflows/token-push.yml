@@ -9,6 +9,10 @@ jobs:
   token_push_job:
     runs-on: ubuntu-latest
     steps:
+      - name: Skip pipeline for bot commits
+        if: ${{ github.actor == 'github-actions[bot]' }}
+        run: echo "Skipping pipeline for bot commits" && exit 0
+        
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
