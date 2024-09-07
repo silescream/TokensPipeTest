@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Добавляем токен для аутентификации
 
       - name: Navigate to TokenParser directory
         working-directory: ./front-custom-packages-main
@@ -25,12 +27,12 @@ jobs:
           git config --global user.email "kuznietsovalex@gmail.com"
           git config --global user.name "Silescream"
 
-        
       - name: Add generated files to Git
         working-directory: ./front-custom-packages-main
         run: |
           git add themes/*
           git commit -m "Add generated CSS files from tokens"
+          
       - name: Push changes
         run: |
           git push
