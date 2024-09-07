@@ -34,11 +34,16 @@ jobs:
           git config --global user.email "kuznietsovalex@gmail.com"
           git config --global user.name "Silescream"
 
+      - name: Check for changes
+        working-directory: ./front-custom-packages-main
+        run: |
+          git diff --exit-code || exit 0
+
       - name: Add generated files to Git
         working-directory: ./front-custom-packages-main
         run: |
           git add themes/* figmaTokenParser/parsedVariables/
-          git commit -m "Add generated CSS files from tokens"
+          git commit -m "Add generated CSS files from tokens" || exit 0
           
       - name: Push changes
         run: |
