@@ -47,6 +47,14 @@
           "https://raw.githubusercontent.com/kpsolo/cv-design-tokens/main/cv.default.json"
         ]
       }
+    },
+      "generate-token-test": {
+      "command": "node figmaTokenParser/tokenParser.js && node figmaTokenParser/cssToScssParser.js",
+      "env": {
+        "LINKS": [
+          "https://raw.githubusercontent.com/silescream/TokensPipeTest/main/tokens.json"
+        ]
+      }
     }
   },
   "repository": {
