@@ -1,0 +1,16 @@
+name: Token Push Pipeline
+
+on:
+  push:
+    branches:
+      - main  # укажи ветку, в которую пушатся токены
+
+jobs:
+  token_push_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print a message
+        run: echo "Tokens have been pushed, the pipeline is triggered."
